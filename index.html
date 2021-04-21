@@ -134,16 +134,16 @@
     var visitedAt = (new Date()).getTime(); // 방문 시간
     var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기 
     
-	  console.log(varUA);
+    console.log(varUA);
  
 	  //ANDROID
-	  if (varUA.match('android') != null) {  
-   if(userAgent.match(/KAKAOTALK/)){
-	  location.href='intent://cskwork.github.io/gscommbizcard/#Intent;scheme=http;package=com.android.chrome;end'; 
-   };
- } else if (varUA.indexOf("iphone") > -1 || varUA.indexOf("ipod") > -1) {
-	  if(userAgent.match(/KAKAOTALK/)){
-	  location.href='ftp://cskwork.github.io/bridge.html'
+   if (varUA.match('android') != null) {  
+       if(userAgent.match(/KAKAOTALK/)){
+	location.href='intent://cskwork.github.io/gscommbizcard/#Intent;scheme=http;package=com.android.chrome;end'; 
+      };
+   } else if (varUA.indexOf("iphone") > -1 || varUA.indexOf("ipod") > -1) {
+       if(userAgent.match(/KAKAOTALK/)){
+	location.href='ftp://cskwork.github.io/bridge.html';
    };
 	 
 	
