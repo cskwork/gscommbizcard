@@ -1,5 +1,5 @@
 [{
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target" : { "namespace": "android_app", "package_name": "io.github.cskwork.twa",
-                   "sha256_cert_fingerprints": ["FF:CA:1D:4D:9A:44:9F:20:16:57:31:DB:7D:91:69:3C:FA:31:7E:E8:87:1C:FC:8A:C2:CB:2B:82:9F:1F:41:61"] }
+                   "sha256_cert_fingerprints": ["E1:AB:AB:FF:2F:69:8A:19:F3:D7:D8:AE:F8:09:A9:1F:3D:A9:4E:11:F7:DD:C3:6D:47:63:5F:3E:03:D4:D5:C7"] }
     }]
