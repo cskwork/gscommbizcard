@@ -132,9 +132,7 @@ img{vertical-align:top;max-width:100%;height: auto;}
 }
 
 #installContainer button {
-  background-color: inherit;
   border: 1px solid white;
-  color: white;
   font-size: 1em;
   padding: 0.75em;
 }
