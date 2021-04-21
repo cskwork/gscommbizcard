@@ -138,6 +138,8 @@
     const divInstall = document.getElementById('installContainer');
     const butInstall = document.getElementById('butInstall');
 
+
+
 /* Put code here */
 window.addEventListener('beforeinstallprompt', (event) => {
   console.log('👍', 'beforeinstallprompt', event);
@@ -149,6 +151,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
 butInstall.addEventListener('click', async () => {
   console.log('👍', 'butInstall-clicked');
+  window.open("https://cskwork.github.io/gscommbizcard/", "_self");
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
