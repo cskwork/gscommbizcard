@@ -25,6 +25,7 @@ self.addEventListener('fetch', function(e) {
   );
 });
 
+/* ADDED */
 let deferredPrompt;
 
 self.addEventListener('beforeinstallprompt', (e) => {
