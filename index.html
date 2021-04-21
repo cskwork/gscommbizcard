@@ -122,12 +122,11 @@
   <script src="js/main.js"></script>
  
   <script type="text/javascript">
-       
-    let deferredPrompt;
+    
     let btnAdd = document.getElementById('btnAdd') ;
 
     // Initialize deferredPrompt for use later to show browser install prompt.
-let deferredPrompt;
+    let deferredPrompt;
 
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent the mini-infobar from appearing on mobile
@@ -161,7 +160,7 @@ let deferredPrompt;
       // Optionally, send analytics event to indicate successful install
       console.log('PWA was installed');
     });
-    
+
     window.matchMedia('(display-mode: standalone)').addEventListener((evt) => {
       let displayMode = 'browser';
       if (evt.matches) {
