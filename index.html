@@ -112,7 +112,7 @@
             <br>
             <!-- Install button, hidden by default -->
     <div id="installContainer" >
-      <button id="butInstall" onclick="window.open('https://cskwork.github.io/gscommbizcard/')" type="button">
+      <button id="butInstall" type="button">
         앱으로 설치하기
       </button>
     </div>
@@ -121,7 +121,6 @@
 
             </div>
     </div>
-
 
 
  </body>
@@ -138,7 +137,16 @@
     const divInstall = document.getElementById('installContainer');
     const butInstall = document.getElementById('butInstall');
 
+butInstall.addEventListener('click', openNewUrl);
+let count=0;
+function openNewUrl{
+    console.log(count);
+        if(count==0){
+                window.open('https://cskwork.github.io/gscommbizcard/');
+        }else{
 
+        }
+};
 
 /* Put code here */
 window.addEventListener('beforeinstallprompt', (event) => {
