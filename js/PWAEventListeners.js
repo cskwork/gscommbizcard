@@ -1,33 +1,27 @@
-export const pwaTrackingListeners = () => {
-  const fireAddToHomeScreenImpression = event => {
-    fireTracking("Add to homescreen shown");
-    //will not work for chrome, untill fixed
-    event.userChoice.then(choiceResult => {
-      fireTracking(`User clicked ${choiceResult}`);
-    });
-    //This is to prevent `beforeinstallprompt` event that triggers again on `Add` or `Cancel` click
-    window.removeEventListener(
-      "beforeinstallprompt",
-      fireAddToHomeScreenImpression
-    );
-  };
-  window.addEventListener("beforeinstallprompt", fireAddToHomeScreenImpression);
-  
-  //Track web app install by user
-  window.addEventListener("appinstalled", event => {
-    fireTracking("PWA app installed by user!!! Hurray");
-  });
+let deferredPrompt;
 
-  //Track from where your web app has been opened/browsed
-  window.addEventListener("load", () => {
-    let trackText;
-    if (navigator && navigator.standalone) {
-      trackText = "Launched: Installed (iOS)";
-    } else if (matchMedia("(display-mode: standalone)").matches) {
-      trackText = "Launched: Installed";
-    } else {
-      trackText = "Launched: Browser Tab";
-    }
-    fireTracking(track);
-  });
-};
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can add to home screen
+  btnAdd.style.display = 'block';
+});
+
+btnAdd.addEventListener('click', (e) => {
+  // hide our user interface that shows our A2HS button
+  btnAdd.style.display = 'none';
+  // Show the prompt
+  deferredPrompt.prompt();
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});
