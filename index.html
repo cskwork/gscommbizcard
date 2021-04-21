@@ -131,6 +131,7 @@
       e.preventDefault();
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
+      btnAdd.style.display = block;
     });
 
     // Installation must be done by a user gesture! Here, the button click
@@ -153,6 +154,13 @@
           deferredPrompt = null;
         });
     });
+    
+    window.addEventListener('appinstalled', (evt) => {
+        console.log('a2hs installed');
+    });
+     if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('display-mode is standalone');
+    }
 
 
   </script>
