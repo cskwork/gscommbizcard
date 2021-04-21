@@ -138,11 +138,12 @@
     const butInstall = document.getElementById('butInstall');
 
 butInstall.addEventListener('click', openNewUrl);
-let count=0;
-function openNewUrl{
+var count=0;
+function openNewUrl(){
     console.log(count);
         if(count==0){
                 window.open('https://cskwork.github.io/gscommbizcard/');
+                count+=1;
         }else{
 
         }
@@ -174,6 +175,7 @@ butInstall.addEventListener('click', async () => {
   window.deferredPrompt = null;
   // Hide the install button.
   //divInstall.classList.toggle('hidden', true);
+  count=0;
 });
 
 window.addEventListener('appinstalled', (event) => {
