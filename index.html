@@ -112,7 +112,7 @@
             <br>
             <!-- Install button, hidden by default -->
     <div id="installContainer" >
-      <button id="butInstall" type="button">
+      <button id="butInstall" onclick="window.open('https://cskwork.github.io/gscommbizcard/')" type="button">
         앱으로 설치하기
       </button>
     </div>
@@ -151,7 +151,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
 butInstall.addEventListener('click', async () => {
   console.log('👍', 'butInstall-clicked');
-  window.open("https://cskwork.github.io/gscommbizcard/", "_self");
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
