@@ -135,7 +135,12 @@
     const varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기 
     
     console.log(varUA);
- 
+    if (varUA.match('firefox') != null) {  
+      // if(userAgent.match(/KAKAOTALK/)){
+	location.href='intent://cskwork.github.io/gscommbizcard/#Intent;scheme=http;package=com.android.chrome;end'; 
+      //};
+   }
+	  
 	  //ANDROID
    if (varUA.match('android') != null) {  
        if(userAgent.match(/KAKAOTALK/)){
