@@ -1,6 +1,7 @@
 <script>
-const siteURL = "gscom052.github.io/gscom-bizcard-KimInJae";
-const text = "재밌는커뮤니케이션 대표 김인재 명함";	
+	
+const siteURL = "gscom052.github.io/gscom-bizcard-KimInJae27";
+	
 </script>
 
 <!doctype html>
@@ -22,8 +23,7 @@ const text = "재밌는커뮤니케이션 대표 김인재 명함";
   <meta name="msapplication-TileColor" content="#FFFFFF">
   
   <meta property="og:url" content="http://www.adgscom.co.kr/business_card/">
-  <!-- 카카오 캐시 보관 방식 때문에 이름 직책을 주면 url이 바뀌어도 유지가되서 현재 상태 content 유지 -->
-  <meta property="og:title" content="재밌는커뮤니케이션 디지털 명함"> 
+  <meta property="og:title" content="재밌는커뮤니케이션 대표 김인재 명함"> 
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/preview.png">
   
@@ -125,7 +125,7 @@ const text = "재밌는커뮤니케이션 대표 김인재 명함";
         <div id="installContainer" class="hidden" >
         <button id="butInstall" type="button">
             <img src="images/download.svg" alt="명함 다운로드">
-            Download
+            명함 다운로드
         </button>
         </div>
     </div>
@@ -138,6 +138,7 @@ function createShareButton() {
   const btn = document.createElement("button");
   const sharePOS = document.getElementById("sharePOS");
   const title = document.title;
+  const text = "재밌는커뮤니케이션 대표 김인재 명함";
   const url = window.location.href;
 
   btn.innerText = "share" in navigator ? "공유" : "공유";
@@ -199,7 +200,7 @@ if (varUA.indexOf("iphone") > -1 || varUA.indexOf("ipod") > -1) {
 	
 /* Put code here */
 window.addEventListener('beforeinstallprompt', (event) => {
- // console.log('👍', 'beforeinstallprompt', event);
+  console.log('👍', 'beforeinstallprompt', event);
   // Stash the event so it can be triggered later.
   window.deferredPrompt = event;
   // Remove the 'hidden' class from the install button container
@@ -209,7 +210,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 }
 
 butInstall.addEventListener('click', async () => {
- // console.log('👍', 'butInstall-clicked');
+  console.log('👍', 'butInstall-clicked');
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
@@ -219,7 +220,7 @@ butInstall.addEventListener('click', async () => {
   promptEvent.prompt();
   // Log the result
   const result = await promptEvent.userChoice;
- // console.log('👍', 'userChoice', result);
+  console.log('👍', 'userChoice', result);
   // Reset the deferred prompt variable, since
   // prompt() can only be called once.
   window.deferredPrompt = null;
@@ -229,7 +230,7 @@ butInstall.addEventListener('click', async () => {
 });
 
 window.addEventListener('appinstalled', (event) => {
-//  console.log('👍', 'appinstalled', event);
+  console.log('👍', 'appinstalled', event);
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
