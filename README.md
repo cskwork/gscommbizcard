@@ -1,5 +1,5 @@
-# gscom-bizcard-KimInJae
+# bizcard
 
-https://gscom052.github.io/gscom-bizcard-KimInJae
+https://github.io
 
 ### PWA BUILDER에 한번 돌리기
